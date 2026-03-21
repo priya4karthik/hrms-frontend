@@ -138,6 +138,14 @@ export default function Sidebar() {
           <button className="sidebar-toggle d-none d-md-flex" onClick={() => setCollapsed(!collapsed)}>
             {collapsed ? <FiChevronRight size={14} /> : <FiChevronLeft size={14} />}
           </button>
+          {/* Mobile close button */}
+<button 
+  className="d-md-none btn btn-outline btn-sm" 
+  onClick={() => setMobileOpen(false)}
+  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+>
+  <FiChevronLeft size={14} />
+</button>
         </div>
 
         {/* Navigation */}
