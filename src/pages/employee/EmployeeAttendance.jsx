@@ -299,7 +299,7 @@ export default function EmployeeAttendance() {
     try {
       const token = localStorage.getItem('access_token')
       const m = viewMonth.getMonth()+1, y = viewMonth.getFullYear()
-      const res = await fetch(`/api/attendance/export/${type}/?month=${m}&year=${y}`, { headers: { Authorization: `Bearer ${token}` } })
+      const res = await fetch(`https://priyak.pythonanywhere.com/api/attendance/export/${type}/?month=${m}&year=${y}`, { headers: { Authorization: `Bearer ${token}` } })
       if (!res.ok) { alert('Export failed'); return }
       const blob = await res.blob()
       const url = URL.createObjectURL(blob)

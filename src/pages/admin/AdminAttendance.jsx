@@ -53,9 +53,9 @@ export default function AdminAttendance() {
     try {
       const params = buildExportParams()
       const token = localStorage.getItem('access_token')
-      const response = await fetch(`/api/attendance/export/${type}/?${params}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      })
+      const response = await fetch(`https://priyak.pythonanywhere.com/api/attendance/export/${type}/?${params}`, {
+  headers: { Authorization: `Bearer ${token}` }
+})
       if (!response.ok) {
         const text = await response.text()
         alert(`Export failed: ${text}`)
