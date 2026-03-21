@@ -211,11 +211,11 @@ export default function AdminEmployees() {
         const fd = new FormData()
         fd.append('profile_image', photoFile)
         const token = localStorage.getItem('access_token')
-        await fetch(`/api/auth/users/${userId}/photo/`, {
-          method: 'POST',
-          headers: { 'Authorization': `Bearer ${token}` },
-          body: fd,
-        })
+      await fetch(`https://priyak.pythonanywhere.com/api/auth/users/${userId}/photo/`, {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${token}` },
+  body: fd,
+})
       }
       setModal({ open: false, mode: 'add', data: null })
       fetchEmployees()
