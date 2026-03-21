@@ -114,18 +114,27 @@ export default function Sidebar() {
   return (
     <>
       <button
-        className="d-md-none btn btn-outline btn-sm"
-        style={{ position: 'fixed', top: 16, left: 16, zIndex: 300 }}
-        onClick={() => setMobileOpen(!mobileOpen)}
-      >
-        <FiMenu />
-      </button>
+  className="d-md-none btn btn-outline btn-sm"
+  style={{ position: 'fixed', top: 16, left: 16, zIndex: 400 }}
+  onClick={() => setMobileOpen(!mobileOpen)}
+>
+  <FiMenu />
+</button>
 
-      {mobileOpen && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 199 }} onClick={() => setMobileOpen(false)} />
-      )}
+{mobileOpen && (
+  <div 
+    style={{ 
+      position: 'fixed', inset: 0, 
+      background: 'rgba(0,0,0,0.4)', 
+      zIndex: 298,
+      touchAction: 'none'
+    }} 
+    onClick={() => setMobileOpen(false)}
+    onTouchStart={() => setMobileOpen(false)}
+  />
+)}
 
-      <aside className={`sidebar ${collapsed ? 'collapsed' : ''} ${mobileOpen ? 'mobile-open' : ''}`}>
+      <aside className={`sidebar ${collapsed ? 'collapsed' : ''} ${mobileOpen ? 'mobile-open' : ''}`} style={{ zIndex: 299 }}>
         {/* Header */}
         <div className="sidebar-header">
           <div className="sidebar-brand">
