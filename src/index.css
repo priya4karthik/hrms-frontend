@@ -775,6 +775,28 @@ html, body, #root {
   }
 }
 
+
+
+@media (max-width: 768px) {
+  .app-layout {
+    padding-left: 0 !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .topbar {
+    padding-left: 60px !important;
+  }
+
+  .page-content {
+    padding-top: 16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
 /* ============ MAIN CONTENT ============ */
 .main-content {
   flex: 1;
